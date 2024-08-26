@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Slot_data" load_steps=3 format=3 uid="uid://c8yrwdhag4u08"]
+
+[ext_resource type="Resource" uid="uid://cq20w3vupgsnv" path="res://Scenes/Prefabs/Inventory/Test_item.tres" id="1_6bdlt"]
+[ext_resource type="Script" path="res://Scripts/SlotData.gd" id="1_hqur7"]
+
+[resource]
+script = ExtResource("1_hqur7")
+itemdata = ExtResource("1_6bdlt")

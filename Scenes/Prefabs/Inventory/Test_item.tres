@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item_data" load_steps=4 format=3 uid="uid://cq20w3vupgsnv"]
+
+[ext_resource type="Script" path="res://Scripts/Item_data.gd" id="1_4xmvm"]
+[ext_resource type="Texture2D" uid="uid://cxfjjrbrxkl3s" path="res://icon.svg" id="2_1xvk4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrplw"]
+atlas = ExtResource("2_1xvk4")
+
+[resource]
+script = ExtResource("1_4xmvm")
+Name = "This is an item"
+description = "HI im an item"
+texture = SubResource("AtlasTexture_mrplw")

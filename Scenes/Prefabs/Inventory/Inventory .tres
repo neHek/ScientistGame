@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Inventory_data" load_steps=4 format=3 uid="uid://ckaeke8afky3x"]
+
+[ext_resource type="Script" path="res://Scripts/Inventory_data.gd" id="1_tx4dd"]
+[ext_resource type="Script" path="res://Scripts/SlotData.gd" id="2_lj8eh"]
+[ext_resource type="Resource" uid="uid://c8yrwdhag4u08" path="res://Scenes/Prefabs/Inventory/Slot test.tres" id="3_wimpr"]
+
+[resource]
+script = ExtResource("1_tx4dd")
+slot_datas = Array[ExtResource("2_lj8eh")]([ExtResource("3_wimpr"), null, null, ExtResource("3_wimpr"), null])
