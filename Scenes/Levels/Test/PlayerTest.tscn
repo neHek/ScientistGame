@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://1c4xc7jh3w2x"]
+[gd_scene load_steps=15 format=3 uid="uid://1c4xc7jh3w2x"]
 
 [ext_resource type="PackedScene" uid="uid://cmn8cv4xlsjwe" path="res://Scenes/Prefabs/Player/Player.tscn" id="1_vrwpf"]
 [ext_resource type="PhysicsMaterial" uid="uid://ch6oe3rrtxpgo" path="res://Assets/PhysicsMaterials/stone.tres" id="2_x16xj"]
 [ext_resource type="PhysicsMaterial" uid="uid://cb0d3e8xhnbhr" path="res://Assets/PhysicsMaterials/wood.tres" id="3_nv74v"]
+[ext_resource type="PackedScene" uid="uid://b5fr24i85qbkx" path="res://Scenes/Prefabs/Inventory/Inventory.tscn" id="4_lb58b"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4ecg4"]
 size = Vector2(1, 1)
@@ -83,3 +84,20 @@ environment = SubResource("Environment_i2iwf")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0310793, 0.999517, 0, -0.999517, 0.0310793, 0, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" parent="CanvasLayer/Control" instance=ExtResource("4_lb58b")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 50.0

@@ -6,4 +6,4 @@
 
 [resource]
 script = ExtResource("1_tx4dd")
-slot_datas = Array[ExtResource("2_lj8eh")]([ExtResource("3_wimpr"), null, null, ExtResource("3_wimpr"), null])
+slot_datas = Array[ExtResource("2_lj8eh")]([ExtResource("3_wimpr"), null, ExtResource("3_wimpr"), ExtResource("3_wimpr"), null])
