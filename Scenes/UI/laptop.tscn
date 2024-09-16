@@ -1,0 +1,72 @@
+[gd_scene load_steps=12 format=3 uid="uid://b2866ubj0npqf"]
+
+[ext_resource type="Script" path="res://Scenes/UI/StaticBody3D.gd" id="1_je0x8"]
+[ext_resource type="Script" path="res://Scenes/UI/gui3d.gd" id="2_genas"]
+[ext_resource type="PackedScene" uid="uid://cg2ru71agh8t3" path="res://Scenes/UI/laptop screen UI.tscn" id="2_hv74x"]
+[ext_resource type="PackedScene" uid="uid://brbobi6rj7efx" path="res://Main/Environment/Basement/Laptop.glb" id="2_i6k3b"]
+[ext_resource type="AudioStream" uid="uid://bjgb6rg8dv5vv" path="res://Assets/Audio/PCstartup.mp3" id="5_osfrq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mfmrt"]
+size = Vector3(1, 0.8, 0.001)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_e5yjr"]
+viewport_path = NodePath("gui3d/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qtkr"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_e5yjr")
+
+[sub_resource type="QuadMesh" id="QuadMesh_lsp1a"]
+size = Vector2(1, 0.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xa1jl"]
+size = Vector3(1, 0.8, 0.15)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1e5u6"]
+
+[node name="Laptop" type="Node3D"]
+
+[node name="LaptopBody" type="StaticBody3D" parent="."]
+script = ExtResource("1_je0x8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LaptopBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0343785, 0.450575, -0.493253)
+shape = SubResource("BoxShape3D_mfmrt")
+
+[node name="Laptop" parent="." instance=ExtResource("2_i6k3b")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233292, 0.584768, 1.31738)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.497063, 0.488151)
+
+[node name="gui3d" type="Node3D" parent="."]
+script = ExtResource("2_genas")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="gui3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.445892, -0.398)
+material_override = SubResource("StandardMaterial3D_3qtkr")
+mesh = SubResource("QuadMesh_lsp1a")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="gui3d/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gui3d/MeshInstance3D/Area3D"]
+shape = SubResource("BoxShape3D_xa1jl")
+
+[node name="SubViewport" type="SubViewport" parent="gui3d"]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+
+[node name="laptop screen" parent="gui3d/SubViewport" instance=ExtResource("2_hv74x")]
+material = SubResource("ShaderMaterial_1e5u6")
+
+[node name="StartupSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.393996)
+stream = ExtResource("5_osfrq")
+volume_db = -21.333
+unit_size = 1.0

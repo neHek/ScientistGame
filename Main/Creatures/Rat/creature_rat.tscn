@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bduq2sb18jt8x"]
+
+[ext_resource type="Script" path="res://Main/Creatures/Rat/creature_rat.gd" id="1_3uphd"]
+[ext_resource type="Script" path="res://Main/Creatures/creature_traits.gd" id="2_4tf0e"]
+
+[node name="Creature_rat" type="Node3D"]
+script = ExtResource("1_3uphd")
+
+[node name="Creature_traits" type="Node" parent="."]
+script = ExtResource("2_4tf0e")

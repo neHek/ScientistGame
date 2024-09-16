@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dyvb2iseflna6"
+path.s3tc="res://.godot/imported/Basement_Basement_Base_Color.png-56fc42d1fcc24a0e814de24b22d8b382.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "4a44733df6f2ce2de235f6849f1cdf8b"
+}
+
+[deps]
+
+source_file="res://Main/Environment/Basement/Foundation/Basement_Basement_Base_Color.png"
+dest_files=["res://.godot/imported/Basement_Basement_Base_Color.png-56fc42d1fcc24a0e814de24b22d8b382.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

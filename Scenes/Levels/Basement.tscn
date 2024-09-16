@@ -1,21 +1,27 @@
-[gd_scene load_steps=19 format=3 uid="uid://balmmwsvdbio1"]
+[gd_scene load_steps=35 format=3 uid="uid://balmmwsvdbio1"]
 
-[ext_resource type="PackedScene" uid="uid://cn0f3xtrg1v14" path="res://Assets/3DModels/Basement/Foundation/Basement.glb" id="1_icye2"]
-[ext_resource type="PackedScene" uid="uid://bdul7cabxrk6b" path="res://Assets/3DModels/Basement/DoorNStairs/DoorNStairs.glb" id="2_caer8"]
+[ext_resource type="PackedScene" uid="uid://cn0f3xtrg1v14" path="res://Main/Environment/Basement/Foundation/Basement.glb" id="1_icye2"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/PS1.gdshader" id="1_rqrr6"]
+[ext_resource type="PackedScene" uid="uid://bdul7cabxrk6b" path="res://Main/Environment/Basement/DoorNStairs/DoorNStairs.glb" id="2_caer8"]
 [ext_resource type="PackedScene" uid="uid://cmn8cv4xlsjwe" path="res://Scenes/Prefabs/Player/Player.tscn" id="3_q4ay8"]
-[ext_resource type="PackedScene" uid="uid://dlb0phh8up51l" path="res://Assets/3DModels/Basement/Axe/Axe.glb" id="4_l2pp0"]
-[ext_resource type="PackedScene" uid="uid://ckm2smnrvlcfu" path="res://Assets/3DModels/Basement/Beaker container/Beaker container.glb" id="5_aj2hr"]
-[ext_resource type="PackedScene" uid="uid://datlrxykmcoc4" path="res://Assets/3DModels/Basement/cabinet/cabinet.glb" id="6_mp3ln"]
-[ext_resource type="PackedScene" uid="uid://pkw4iol2lbj4" path="res://Assets/3DModels/Basement/Cage 1/Cage 1.glb" id="7_ets3w"]
-[ext_resource type="PackedScene" uid="uid://d1348iq5bobgv" path="res://Assets/3DModels/Basement/Chest/Chest.glb" id="8_7rnwa"]
-[ext_resource type="PackedScene" uid="uid://cy5xaf4xuff7r" path="res://Assets/3DModels/Basement/crate/crate.glb" id="9_e577w"]
-[ext_resource type="PackedScene" uid="uid://48fsug3ectrp" path="res://Assets/3DModels/Basement/Crate 2/Crate 2.glb" id="10_r6vd8"]
-[ext_resource type="PackedScene" uid="uid://dkwfkm25lgn30" path="res://Assets/3DModels/Basement/Filtration Powder/Filtration powder.glb" id="11_3nv2u"]
-[ext_resource type="PackedScene" uid="uid://b5vkpgu2ms5f" path="res://Assets/3DModels/Basement/Fish Tank/Fish tank.glb" id="12_uys7b"]
-[ext_resource type="PackedScene" uid="uid://nd6anjjb0s48" path="res://Assets/3DModels/Basement/Shelf/Shelf.glb" id="13_umtjr"]
-[ext_resource type="PackedScene" uid="uid://dkbhc3s114m0c" path="res://Assets/3DModels/Basement/shelf 2/shelf 2.glb" id="14_c0f5u"]
-[ext_resource type="PackedScene" uid="uid://c5kloe2h3q0x0" path="res://Assets/3DModels/Basement/Table/Table.glb" id="15_ovv2y"]
-[ext_resource type="PackedScene" uid="uid://jqsak7r4w8yl" path="res://Assets/3DModels/Basement/Ladder/Ladder.glb" id="16_xia6l"]
+[ext_resource type="PackedScene" uid="uid://dlb0phh8up51l" path="res://Main/Environment/Basement/Axe/Axe.glb" id="4_l2pp0"]
+[ext_resource type="PackedScene" uid="uid://ckm2smnrvlcfu" path="res://Main/Environment/Basement/Beaker container/Beaker container.glb" id="5_aj2hr"]
+[ext_resource type="Texture2D" uid="uid://c1o84hobe0wea" path="res://Assets/UI Textures/axe.png" id="6_2vn13"]
+[ext_resource type="PackedScene" uid="uid://datlrxykmcoc4" path="res://Main/Environment/Basement/cabinet/cabinet.glb" id="6_mp3ln"]
+[ext_resource type="PackedScene" uid="uid://pkw4iol2lbj4" path="res://Main/Environment/Basement/Cage 1/Cage 1.glb" id="7_ets3w"]
+[ext_resource type="PackedScene" uid="uid://48fsug3ectrp" path="res://Main/Environment/Basement/Crate 2/Crate 2.glb" id="10_r6vd8"]
+[ext_resource type="PackedScene" uid="uid://dkwfkm25lgn30" path="res://Main/Environment/Basement/Filtration Powder/Filtration powder.glb" id="11_3nv2u"]
+[ext_resource type="PackedScene" uid="uid://b5vkpgu2ms5f" path="res://Main/Environment/Basement/Fish Tank/Fish tank.glb" id="12_uys7b"]
+[ext_resource type="PackedScene" uid="uid://nd6anjjb0s48" path="res://Main/Environment/Basement/Shelf/Shelf.glb" id="13_umtjr"]
+[ext_resource type="PackedScene" uid="uid://dkbhc3s114m0c" path="res://Main/Environment/Basement/shelf 2/shelf 2.glb" id="14_c0f5u"]
+[ext_resource type="PackedScene" uid="uid://c5kloe2h3q0x0" path="res://Main/Environment/Basement/Table/Table.glb" id="15_ovv2y"]
+[ext_resource type="PackedScene" uid="uid://jqsak7r4w8yl" path="res://Main/Environment/Basement/Ladder/Ladder.glb" id="16_xia6l"]
+[ext_resource type="PackedScene" uid="uid://b2866ubj0npqf" path="res://Scenes/UI/laptop.tscn" id="18_iddpo"]
+[ext_resource type="PackedScene" uid="uid://dv8n8d4jw2s0" path="res://Main/Creatures/Rat/rat.tscn" id="20_1a4xg"]
+[ext_resource type="PackedScene" uid="uid://b0emm82pisgsc" path="res://Main/Environment/Basement/Vial/vial.tscn" id="20_rexn4"]
+[ext_resource type="PackedScene" uid="uid://dpp0tjv3wkwfk" path="res://Scenes/Prefabs/Player/pickupable.tscn" id="20_wssct"]
+[ext_resource type="PackedScene" uid="uid://b7q8bp3xj1tnt" path="res://Main/Environment/Basement/Mutator machine v2/mutator machine.tscn" id="24_m2avm"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/CRT.gdshader" id="25_o6q63"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xsjmc"]
 size = Vector3(144.232, 44.4752, 0.329834)
@@ -23,13 +29,49 @@ size = Vector3(144.232, 44.4752, 0.329834)
 [sub_resource type="BoxShape3D" id="BoxShape3D_apktm"]
 size = Vector3(115.881, 0.594177, 137.106)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_80j0i"]
+friction = 0.5
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hpb40"]
+radius = 0.274292
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lfcfx"]
+height = 0.468092
+radius = 0.235374
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lnpju"]
+size = Vector3(6.49625, 3.85162, 5.12256)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f6pfe"]
+size = Vector3(1.05432, 1.08687, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tk7kx"]
+size = Vector3(1.66907, 0.438049, 0.568359)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yukyl"]
+size = Vector3(1, 4.854, 0.308716)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lg78m"]
+shader = ExtResource("25_o6q63")
+shader_parameter/scanline_count = 50.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_w4aae"]
+specular_color = Color(0.239216, 0.258824, 0.266667, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2q558"]
+shader = ExtResource("1_rqrr6")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 12
+shader_parameter/dither_size = 1
+
 [node name="Basement" type="Node3D"]
 
 [node name="Basement" parent="." instance=ExtResource("1_icye2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0492, -9.52065, 15.2279)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Basement"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.54347)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0516701, -3.54347)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Basement/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.600952, 16.9368, 41.8722)
@@ -55,19 +97,53 @@ shape = SubResource("BoxShape3D_apktm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3239, -9.75613, -74.8006)
 
 [node name="Player" parent="." instance=ExtResource("3_q4ay8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.3466, -8.2683, 35.922)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -42.9038, -8.93757, 48.4968)
 
-[node name="Axe" parent="." instance=ExtResource("4_l2pp0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.3932, -9.1255, 53.3916)
+[node name="Axe" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.940151, -0.340757, 0, 0.340757, 0.940151, -76.6874, -9.11139, 52.8367)
+mass = 0.2
+physics_material_override = SubResource("PhysicsMaterial_80j0i")
+can_sleep = false
+metadata/_edit_group_ = true
 
-[node name="Beaker container" parent="." instance=ExtResource("5_aj2hr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.4652, -9.17644, 53.1926)
+[node name="Axe" parent="Axe" instance=ExtResource("4_l2pp0")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Axe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0466843, 0.971205, 0.0268822)
+shape = SubResource("CapsuleShape3D_hpb40")
+
+[node name="Pickupable" parent="Axe" instance=ExtResource("20_wssct")]
+Ui_texture = ExtResource("6_2vn13")
+
+[node name="Beaker" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.1615, -7.88078, 50.663)
+mass = 0.3
+
+[node name="Beaker container" parent="Beaker" instance=ExtResource("5_aj2hr")]
+
+[node name="Pickupable" parent="Beaker" instance=ExtResource("20_wssct")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Beaker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.239303, 0)
+shape = SubResource("CylinderShape3D_lfcfx")
 
 [node name="cabinet" parent="." instance=ExtResource("6_mp3ln")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.407, -9.17644, 52.3211)
 
-[node name="Cage 1" parent="." instance=ExtResource("7_ets3w")]
+[node name="Cage" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.1783, -9.17644, 50.173)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00932312, 1.97919, 0.00463867)
+shape = SubResource("BoxShape3D_lnpju")
+
+[node name="Cage 1" parent="Cage" instance=ExtResource("7_ets3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0500259, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Cage"]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 3.67628, 0)
+spot_range = 9.792
+spot_angle = 70.45
 
 [node name="Cage 2" parent="." instance=ExtResource("7_ets3w")]
 transform = Transform3D(0.95659, 0, 0.291437, 0, 1, 0, -0.291437, 0, 0.95659, 10.8948, -9.17644, 34.5049)
@@ -81,14 +157,14 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.10288, 0, -9.66267)
 [node name="Ladder2" parent="Cage 2" instance=ExtResource("16_xia6l")]
 transform = Transform3D(0.609811, 0.0294205, -0.792169, -0.0174497, 1.20176, 0.0174524, 0.792355, 0.00382333, 0.610052, -5.99315, 0, -5.28957)
 
-[node name="Chest" parent="." instance=ExtResource("8_7rnwa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.2909, -9.17644, 51.6109)
+[node name="Crate 2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.0527, -9.08904, 50.7685)
 
-[node name="crate" parent="." instance=ExtResource("9_e577w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.0729, -9.17644, 51.9852)
+[node name="Crate 2" parent="Crate 2" instance=ExtResource("10_r6vd8")]
 
-[node name="Crate 2" parent="." instance=ExtResource("10_r6vd8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.0527, -9.17644, 51.9995)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00115967, 0.54458, 0)
+shape = SubResource("BoxShape3D_f6pfe")
 
 [node name="Filtration powder" parent="." instance=ExtResource("11_3nv2u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.7056, -9.17644, 52.4876)
@@ -102,8 +178,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.4633, -9.17644, 52.3356)
 [node name="shelf 2" parent="." instance=ExtResource("14_c0f5u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.4158, -9.17644, 52.3885)
 
-[node name="Table" parent="." instance=ExtResource("15_ovv2y")]
+[node name="Table3" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.3225, -9.17644, 52.4459)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00161743, 0.295671, 0.00629044)
+shape = SubResource("BoxShape3D_tk7kx")
+
+[node name="Table" parent="Table3" instance=ExtResource("15_ovv2y")]
 
 [node name="Table2" parent="." instance=ExtResource("15_ovv2y")]
 transform = Transform3D(-0.995119, 0, 0.3367, 0, 2.09954, 0, -0.0986771, 0, -3.39548, 10.6067, -9.17644, 42.6134)
@@ -117,5 +199,52 @@ transform = Transform3D(1, 0, 0, 0, 0.476295, 0, 0, 0, 0.293072, 2.09523, 0, 0.8
 [node name="cabinet2" parent="Table2" instance=ExtResource("6_mp3ln")]
 transform = Transform3D(-0.0790498, 0, 1.13286, 0, 0.298421, 0, -0.167991, 0, -0.0457867, 0.371666, 4.76837e-07, 0.644853)
 
-[node name="Ladder" parent="." instance=ExtResource("16_xia6l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.111, -9.17644, 52.8926)
+[node name="Ladder" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.111, -8.87147, 52.8926)
+mass = 0.7
+
+[node name="Ladder" parent="Ladder" instance=ExtResource("16_xia6l")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ladder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47339, -0.00948715)
+shape = SubResource("BoxShape3D_yukyl")
+
+[node name="Laptop" parent="." instance=ExtResource("18_iddpo")]
+transform = Transform3D(-0.999665, 0, -0.0258805, 0, 1, 0, 0.0258805, 0, -0.999665, -36.8668, -8.61125, 52.38)
+
+[node name="Vial" parent="." instance=ExtResource("20_rexn4")]
+transform = Transform3D(1, 0, 0, 0, -0.0166845, -0.999861, 0, 0.999861, -0.0166845, -42.3457, -7.25221, 50.8251)
+traits = {
+"aggression": -5,
+"cuteness": 10,
+"intelligence": 0,
+"size": 20,
+"speed": 10,
+"strength": 10
+}
+
+[node name="Rat" parent="." instance=ExtResource("20_1a4xg")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -43.2936, -7.4396, 50.7301)
+
+[node name="mutator machine" parent="." instance=ExtResource("24_m2avm")]
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -42.9038, -9.17207, 51.686)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_lg78m")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("CanvasTexture_w4aae")
+expand_mode = 2
+
+[node name="PS1 Shader" type="SubViewportContainer" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_2q558")
+offset_right = 1925.0
+offset_bottom = 1088.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="PS1 Shader"]
+handle_input_locally = false
+size = Vector2i(1925, 1088)
+render_target_update_mode = 0
