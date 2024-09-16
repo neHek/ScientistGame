@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://d381as0qsoodh"]
+
+[ext_resource type="Script" path="res://Scripts/UI/InteractionUI.gd" id="1_c2jrd"]
+[ext_resource type="Texture2D" uid="uid://ba4mv5bgflluk" path="res://Assets/UI/interaction_point.png" id="1_nhb2y"]
+
+[node name="Canvas" type="CanvasLayer"]
+
+[node name="InteractionUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c2jrd")
+
+[node name="Point" type="TextureRect" parent="InteractionUI"]
+modulate = Color(0.67451, 0.67451, 0.67451, 0.67451)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nhb2y")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="InteractionUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = 21.0
+offset_right = 172.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1

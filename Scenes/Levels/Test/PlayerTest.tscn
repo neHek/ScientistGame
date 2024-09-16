@@ -1,8 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://1c4xc7jh3w2x"]
+[gd_scene load_steps=17 format=3 uid="uid://1c4xc7jh3w2x"]
 
 [ext_resource type="PackedScene" uid="uid://cmn8cv4xlsjwe" path="res://Scenes/Prefabs/Player/Player.tscn" id="1_vrwpf"]
 [ext_resource type="PhysicsMaterial" uid="uid://ch6oe3rrtxpgo" path="res://Assets/PhysicsMaterials/stone.tres" id="2_x16xj"]
 [ext_resource type="PhysicsMaterial" uid="uid://cb0d3e8xhnbhr" path="res://Assets/PhysicsMaterials/wood.tres" id="3_nv74v"]
+[ext_resource type="Script" path="res://Scenes/Levels/Test/Cube.gd" id="3_vevi5"]
+[ext_resource type="Script" path="res://Scenes/Levels/Test/Cube2.gd" id="4_7yg7w"]
+[ext_resource type="PackedScene" uid="uid://d381as0qsoodh" path="res://Scenes/Prefabs/Interface/LevelCanvas.tscn" id="4_ullw7"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4ecg4"]
 size = Vector2(1, 1)
@@ -35,7 +38,8 @@ sky = SubResource("Sky_42bw7")
 
 [node name="Scene" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource("1_vrwpf")]
+[node name="Player" parent="." node_paths=PackedStringArray("level_canvas") instance=ExtResource("1_vrwpf")]
+level_canvas = NodePath("../LevelCanvas")
 
 [node name="Props" type="Node3D" parent="."]
 
@@ -50,17 +54,19 @@ mesh = SubResource("PlaneMesh_4ecg4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0071106, -0.0104141, 0.00701904)
 shape = SubResource("BoxShape3D_hjq0r")
 
-[node name="Cube" type="StaticBody3D" parent="Props"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21508, 0.484764, 3.70432)
+[node name="Cube1" type="StaticBody3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.50068, 0.758834, 0.218298)
+script = ExtResource("3_vevi5")
 
-[node name="Shape" type="CollisionShape3D" parent="Props/Cube"]
+[node name="Shape" type="CollisionShape3D" parent="Props/Cube1"]
 shape = SubResource("BoxShape3D_h8v5j")
 
-[node name="Mesh" type="MeshInstance3D" parent="Props/Cube"]
+[node name="Mesh" type="MeshInstance3D" parent="Props/Cube1"]
 mesh = SubResource("BoxMesh_fqbsh")
 
 [node name="Cube2" type="StaticBody3D" parent="Props"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66813, 0.484764, -3.51768)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3833, 0.758834, 0.218298)
+script = ExtResource("4_7yg7w")
 
 [node name="Shape" type="CollisionShape3D" parent="Props/Cube2"]
 shape = SubResource("BoxShape3D_h8v5j")
@@ -77,6 +83,8 @@ mesh = SubResource("BoxMesh_yyxrv")
 
 [node name="Shape" type="CollisionShape3D" parent="Props/WoodFloor"]
 shape = SubResource("BoxShape3D_qaa0r")
+
+[node name="LevelCanvas" parent="." instance=ExtResource("4_ullw7")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_i2iwf")
