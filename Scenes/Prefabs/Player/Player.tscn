@@ -124,7 +124,7 @@ target_position = Vector3(0, 0, -3)
 [node name="Camera" type="Camera3D" parent="CameraController" groups=["player_cam"]]
 
 [node name="DropMarker" type="Marker3D" parent="CameraController"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0164444, -0.743239)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0992619, -0.743239)
 
 [node name="FootstepsAudio" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.129428, 0)

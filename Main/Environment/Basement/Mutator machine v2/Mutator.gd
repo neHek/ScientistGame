@@ -16,7 +16,6 @@ func get_all_in_folder(path):
 		push_error("Invalid dir: " + path)
 		return items  # Return an empty list if the directory is invalid
 	
-	print("Opening directory: ", path)
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
 	while file_name != "":
@@ -25,6 +24,7 @@ func get_all_in_folder(path):
 			items.merge(get_all_in_folder("res://Main/Creatures/" + str(file_name)))
 		
 		if !file_name.begins_with(".") and file_name.ends_with(".tscn"):
+			print('Loaded scene: ', file_name)
 			var full_path = path + "/" + file_name
 			# Remove .remap extension if present
 			if full_path.ends_with(".remap"):
@@ -51,28 +51,28 @@ func _ready():
 	state_update()
 
 func mutate(): # Accepts a creature node and a "chemicals vial"
+	$Screen/SubViewport/Control/NewMutation.visible = false
 	var mutation_picked = null
 	if not creature or not vial:
 		return false
 	
-	print('-------\n', 'Mutating: ')
 	var starting_traits = creature.find_child('Creature_traits').traits
 	var type = creature.find_child('Creature_traits').base_creature
-	# var starting_traits = {'size': randi_range(1, 5),           'strength': randi_range(1, 8),
-	# 					   'intelligence': randi_range(1, 8),   'aggression': randi_range(1, 10),
-	# 					   'cuteness': randi_range(5, 12),      'speed': randi_range(10, 35)}
-	
-	# var trait_change = {'size': randi_range(-50, 50),             'strength': randi_range(90, 90),
-	# 					'intelligence': randi_range(-50, 50),     'aggression': randi_range(-50, 50),
-	# 					'cuteness': randi_range(-50, 50),         'speed': randi_range(-50, 50)}
-	
 	var trait_change = vial.traits
 	var new_traits = starting_traits
 	for element in new_traits:
 		new_traits[element] += trait_change[element]
 		new_traits[element] = clamp(new_traits[element], 0, 100)
 	
-	var mutations = CreatureTypes.get(type)
+	print('-------\n', 'Mutating: ', creature.name)
+	
+	# Setting the label
+	$Screen/SubViewport/Control/NewTraits.text = 'New traits: ' + str(new_traits)
+	
+	var mutations = []
+	if creature.find_child('Creature_traits').mutatable:
+		mutations = CreatureTypes.get(type)
+	
 	var possible_mutations = []
 	for mutation in mutations:
 		if new_traits['size'] not in mutation['req']['size']: continue
@@ -87,17 +87,25 @@ func mutate(): # Accepts a creature node and a "chemicals vial"
 		print('\n', new_traits)
 		print('No mutations found')
 		print('-------\n')
+		creature.global_position = $CreatureOut.global_position
+		left_slot.creature_inside = null
+		state_update()
 		return
 	
+	print('Possible mutations: ', str(possible_mutations))
 	mutation_picked = possible_mutations.pick_random()
-	print('\n', new_traits)
-	print(mutation_picked)
+	print('Picked: ', mutation_picked)
+	print(new_traits)
+	
+	if mutation_picked not in CreatureTypes.discovered_types:
+		$Screen/SubViewport/Control/NewMutation.visible = true
+		CreatureTypes.discovered_types.append(mutation_picked)
 	
 	# Spawning new creature
 	var new_creature = mutation_picked + '.tscn'
 	new_creature = crature_scenes[new_creature].instantiate()
 	scene_root.add_child(new_creature)
-	new_creature.global_transform = $CreatureOut.global_transform
+	new_creature.global_position = $CreatureOut.global_position
 	new_creature.find_child('Creature_traits').set_traits(new_traits)
 	print('-------\nNew creature\'s traits: ', new_traits, '\n-------\n')
 	# Deleting old creature
@@ -111,14 +119,18 @@ func state_update():
 	# Update the state of the creature slot
 	if left_slot.creature_inside:
 		creature_ind_ON.visible = true
+		$Screen/SubViewport/Control/CreatureFound.visible = true
 	else:
 		creature_ind_ON.visible = false
+		$Screen/SubViewport/Control/CreatureFound.visible = false
 	
 	# Update the state of the vial slot
 	if vial_slot.vial_inside:
 		vial_ind_ON.visible = true
+		$Screen/SubViewport/Control/MutagenFound.visible = true
 	else:
 		vial_ind_ON.visible = false
+		$Screen/SubViewport/Control/MutagenFound.visible = false
 		
 	creature = left_slot.creature_inside
 	vial = vial_slot.vial_inside

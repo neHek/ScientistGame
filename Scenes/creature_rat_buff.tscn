@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ipxjnpi2c4yo"]
 
-[ext_resource type="Script" path="res://Main/Creatures/Buff rat/Creature_rat_buff.gd" id="1_sdpln"]
+[ext_resource type="Script" path="res://Main/Creatures/Rat_buff/Creature_rat_buff.gd" id="1_sdpln"]
 [ext_resource type="Script" path="res://Main/Creatures/creature_traits.gd" id="2_hx5vv"]
 
 [node name="Creature_rat_buff" type="Node3D"]

@@ -1,6 +1,5 @@
 extends Node3D
 class_name Rat
-
 # Initializing creature traits
 func _ready():
 	var traits = $Creature_traits

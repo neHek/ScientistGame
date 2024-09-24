@@ -1,5 +1,5 @@
 extends Node
-
+var discovered_types = []
 # All possible mutations are stored here sorted by base creature type. 
 # When a creature is modified we check if it's new traits match any of the mutations.
 # If they do - we pick a random matching mutation, despawn old creature, spawn a new mutant with inherited traits
@@ -9,7 +9,7 @@ var buff_rat = {
 	"base_creature": 'rat',
 	"req": {
 		'size':         range(0, 101), 
-		"strength":     range(50, 101),
+		"strength":     range(80, 101),
 		'intelligence': range(0, 101), 
 		'aggression':   range(0, 101), 
 		'cuteness':     range(0, 101), 

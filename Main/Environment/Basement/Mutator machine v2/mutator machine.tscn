@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://b7q8bp3xj1tnt"]
+[gd_scene load_steps=90 format=3 uid="uid://b7q8bp3xj1tnt"]
 
 [ext_resource type="Script" path="res://Main/Environment/Basement/Mutator machine v2/Mutator.gd" id="1_kr668"]
 [ext_resource type="Texture2D" uid="uid://36c0tc0mnpkj" path="res://Main/Environment/Basement/Mutator machine v2/mutator machine_machine.png" id="1_usunv"]
@@ -599,24 +599,31 @@ bottom_radius = 0.02
 height = 0.1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s7btc"]
+resource_local_to_scene = true
 size = Vector3(1.16602, 1.61865, 2.01556)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bk2ac"]
+resource_local_to_scene = true
 size = Vector3(1.1427, 0.307067, 2.01173)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tkdmk"]
+resource_local_to_scene = true
 size = Vector3(0.359619, 1.61389, 2.00977)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5eiku"]
+resource_local_to_scene = true
 size = Vector3(1.59363, 0.857422, 1.60986)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m5r7l"]
+resource_local_to_scene = true
 size = Vector3(1.56689, 0.383911, 0.412231)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yxxst"]
+resource_local_to_scene = true
 points = PackedVector3Array(0.512, 0.365, 1.024, 0.512, 0.437, 0.641, 0.512, 0.301, 0.641, -1.041, 0.365, 1.024, -1.041, 0.437, 0.641, -1.041, 0.301, 0.641)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bo00d"]
+resource_local_to_scene = true
 size = Vector3(0.431396, 1.63562, 1.99313)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_whccp"]
@@ -680,6 +687,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_o3mjp")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5icgb"]
+resource_local_to_scene = true
 radius = 0.05
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qiy5u"]
@@ -997,6 +1005,35 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_5tjph"]
 size = Vector3(0.307129, 0.286987, 0.0707703)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_jw088"]
+viewport_path = NodePath("Screen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e4pn8"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_jw088")
+
+[sub_resource type="QuadMesh" id="QuadMesh_m4hry"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_e4pn8")
+size = Vector2(1.42, 0.25)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ff67o"]
+font_size = 22
+font_color = Color(0, 1, 0, 1)
+outline_size = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_yri74"]
+font_size = 22
+font_color = Color(0, 1, 0, 1)
+outline_size = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_glob3"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_pm7h8"]
+font_size = 22
+outline_size = 1
+
 [node name="mutator machine" type="StaticBody3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_kr668")
@@ -1197,3 +1234,52 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.132989, -0.128921)
 
 [node name="CreatureOut" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17679, 0.496613, 1.28827)
+
+[node name="Screen" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.249954, 0.625031, 0.608141)
+mesh = SubResource("QuadMesh_m4hry")
+
+[node name="SubViewport" type="SubViewport" parent="Screen"]
+transparent_bg = true
+size = Vector2i(1024, 256)
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="Screen/SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CreatureFound" type="Label" parent="Screen/SubViewport/Control"]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 169.0
+offset_bottom = 35.0
+text = "Creature found!"
+label_settings = SubResource("LabelSettings_ff67o")
+
+[node name="MutagenFound" type="Label" parent="Screen/SubViewport/Control"]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 164.0
+offset_bottom = 81.0
+text = "Mutagen found!"
+label_settings = SubResource("LabelSettings_yri74")
+
+[node name="NewTraits" type="Label" parent="Screen/SubViewport/Control"]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 117.0
+offset_bottom = 181.0
+text = "New traits:"
+label_settings = SubResource("LabelSettings_glob3")
+
+[node name="NewMutation" type="Label" parent="Screen/SubViewport/Control"]
+visible = false
+layout_mode = 0
+offset_left = 500.0
+offset_top = 10.0
+offset_right = 616.0
+offset_bottom = 33.0
+text = "New mutation!"
+label_settings = SubResource("LabelSettings_pm7h8")

@@ -1,5 +1,9 @@
+# This is the mutagen vial. Multiple ingredients go into this changing the "traits" variable. 
+# Capacity is the maximum total trait change, not functional yet.
+
 extends RigidBody3D
 @export var traits = {'size': 0, 'strength': 0, 'intelligence': 0, 'aggression': 0, 'cuteness': 0, 'speed': 0}
+@export var capacity = 30
 var vial = true
 
 # Called when the node enters the scene tree for the first time.

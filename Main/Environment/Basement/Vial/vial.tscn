@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cty0frl7ffnes" path="res://Assets/UI Textures/vial.png" id="3_d176o"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_crog7"]
-radius = 0.0461755
-height = 0.375388
+radius = 0.0497714
+height = 0.3987
 
 [node name="Vial" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, -0.0166845, -0.999861, 0, 0.999861, -0.0166845, 0, 0, 0)
@@ -18,7 +18,7 @@ script = ExtResource("1_wfcow")
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 1.86265e-09, 0, -1.86265e-09, 0.7, 0, -0.342548, 0.00571604)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.174384, 0.00571604)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.175981, 0.00574269)
 shape = SubResource("CapsuleShape3D_crog7")
 
 [node name="Pickupable" parent="." instance=ExtResource("2_tkbqo")]

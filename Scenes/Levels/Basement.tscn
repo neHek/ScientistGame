@@ -16,10 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://dkbhc3s114m0c" path="res://Main/Environment/Basement/shelf 2/shelf 2.glb" id="14_c0f5u"]
 [ext_resource type="PackedScene" uid="uid://c5kloe2h3q0x0" path="res://Main/Environment/Basement/Table/Table.glb" id="15_ovv2y"]
 [ext_resource type="PackedScene" uid="uid://jqsak7r4w8yl" path="res://Main/Environment/Basement/Ladder/Ladder.glb" id="16_xia6l"]
-[ext_resource type="PackedScene" uid="uid://b2866ubj0npqf" path="res://Scenes/UI/laptop.tscn" id="18_iddpo"]
 [ext_resource type="PackedScene" uid="uid://dv8n8d4jw2s0" path="res://Main/Creatures/Rat/rat.tscn" id="20_1a4xg"]
 [ext_resource type="PackedScene" uid="uid://b0emm82pisgsc" path="res://Main/Environment/Basement/Vial/vial.tscn" id="20_rexn4"]
 [ext_resource type="PackedScene" uid="uid://dpp0tjv3wkwfk" path="res://Scenes/Prefabs/Player/pickupable.tscn" id="20_wssct"]
+[ext_resource type="PackedScene" uid="uid://0gw3ruis3a4x" path="res://Main/Environment/Basement/shelf 2/shelf_2.tscn" id="22_ws0fc"]
 [ext_resource type="PackedScene" uid="uid://b7q8bp3xj1tnt" path="res://Main/Environment/Basement/Mutator machine v2/mutator machine.tscn" id="24_m2avm"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/CRT.gdshader" id="25_o6q63"]
 
@@ -27,7 +27,7 @@
 size = Vector3(144.232, 44.4752, 0.329834)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_apktm"]
-size = Vector3(115.881, 0.594177, 137.106)
+size = Vector3(115.881, 0.758026, 137.106)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_80j0i"]
 friction = 0.5
@@ -90,7 +90,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 58.818
 shape = SubResource("BoxShape3D_xsjmc")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="Basement/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42239, 0.0471277, -24.8958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42239, 0.129052, -24.8958)
 shape = SubResource("BoxShape3D_apktm")
 
 [node name="DoorNStairs" parent="." instance=ExtResource("2_caer8")]
@@ -175,9 +175,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.8176, -9.17644, 16.9109)
 [node name="Shelf" parent="." instance=ExtResource("13_umtjr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.4633, -9.17644, 52.3356)
 
-[node name="shelf 2" parent="." instance=ExtResource("14_c0f5u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.4158, -9.17644, 52.3885)
-
 [node name="Table3" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.3225, -9.17644, 52.4459)
 
@@ -209,18 +206,48 @@ mass = 0.7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47339, -0.00948715)
 shape = SubResource("BoxShape3D_yukyl")
 
-[node name="Laptop" parent="." instance=ExtResource("18_iddpo")]
-transform = Transform3D(-0.999665, 0, -0.0258805, 0, 1, 0, 0.0258805, 0, -0.999665, -36.8668, -8.61125, 52.38)
-
 [node name="Vial" parent="." instance=ExtResource("20_rexn4")]
-transform = Transform3D(1, 0, 0, 0, -0.0166845, -0.999861, 0, 0.999861, -0.0166845, -42.3457, -7.25221, 50.8251)
+transform = Transform3D(1.19249e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 1.19249e-08, -5.21253e-16, -37.2557, -8.78526, 48.4205)
 traits = {
-"aggression": -5,
-"cuteness": 10,
+"aggression": 25,
+"cuteness": 0,
 "intelligence": 0,
-"size": 20,
-"speed": 10,
-"strength": 10
+"size": 0,
+"speed": 0,
+"strength": 0
+}
+
+[node name="Vial2" parent="." instance=ExtResource("20_rexn4")]
+transform = Transform3D(1.19249e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 1.19249e-08, -5.21253e-16, -37.2557, -8.32967, 48.4211)
+traits = {
+"aggression": 0,
+"cuteness": 0,
+"intelligence": 25,
+"size": 0,
+"speed": 0,
+"strength": 0
+}
+
+[node name="Vial3" parent="." instance=ExtResource("20_rexn4")]
+transform = Transform3D(1.19249e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 1.19249e-08, -5.21253e-16, -37.2557, -7.9166, 48.3597)
+traits = {
+"aggression": 0,
+"cuteness": 0,
+"intelligence": 0,
+"size": 0,
+"speed": 0,
+"strength": 50
+}
+
+[node name="Vial4" parent="." instance=ExtResource("20_rexn4")]
+transform = Transform3D(1.19249e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, 1.19249e-08, -5.21253e-16, -37.2557, -7.43164, 48.3597)
+traits = {
+"aggression": 0,
+"cuteness": 0,
+"intelligence": 0,
+"size": 0,
+"speed": 25,
+"strength": 0
 }
 
 [node name="Rat" parent="." instance=ExtResource("20_1a4xg")]
@@ -248,3 +275,28 @@ stretch = true
 handle_input_locally = false
 size = Vector2i(1925, 1088)
 render_target_update_mode = 0
+
+[node name="shelf 2" parent="." instance=ExtResource("22_ws0fc")]
+transform = Transform3D(-0.155366, 0, 0.987857, 0, 1, 0, -0.987857, 0, -0.155366, -37.106, -9.1162, 48.5379)
+
+[node name="Label3D" type="Label3D" parent="shelf 2"]
+transform = Transform3D(-0.999528, 0, -0.0307303, 0, 1, 0, 0.0307303, 0, -0.999528, 0.87402, 0.185854, -0.0139923)
+pixel_size = 0.003
+text = "Aggression"
+
+[node name="Label3D2" type="Label3D" parent="shelf 2"]
+transform = Transform3D(-0.999528, 0, -0.0307303, 0, 1, 0, 0.0307303, 0, -0.999528, 0.87402, 0.567264, -0.0139923)
+pixel_size = 0.003
+text = "Intelligence
+"
+
+[node name="Label3D3" type="Label3D" parent="shelf 2"]
+transform = Transform3D(-0.999528, 0, -0.0307303, 0, 1, 0, 0.0307303, 0, -0.999528, 0.87402, 1.05726, -0.0139923)
+pixel_size = 0.003
+text = "Strength"
+
+[node name="Label3D4" type="Label3D" parent="shelf 2"]
+transform = Transform3D(-0.999528, 0, -0.0307303, 0, 1, 0, 0.0307303, 0, -0.999528, 0.79414, 1.55581, -0.0265503)
+pixel_size = 0.003
+text = "Speed
+"

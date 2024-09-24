@@ -2,6 +2,7 @@
 
 extends Node
 class_name Creature_traits
+@export var mutatable = true
 
 # Default traits
 @export var base_creature: String
