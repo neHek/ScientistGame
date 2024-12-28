@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://b2866ubj0npqf"]
 
-[ext_resource type="Script" path="res://Scenes/UI/StaticBody3D.gd" id="1_je0x8"]
+[ext_resource type="Script" path="res://Scenes/UI/LaptopBody.gd" id="1_je0x8"]
 [ext_resource type="Script" path="res://Scenes/UI/gui3d.gd" id="2_genas"]
 [ext_resource type="PackedScene" uid="uid://cg2ru71agh8t3" path="res://Scenes/UI/laptop screen UI.tscn" id="2_hv74x"]
 [ext_resource type="PackedScene" uid="uid://brbobi6rj7efx" path="res://Main/Environment/Basement/Laptop.glb" id="2_i6k3b"]

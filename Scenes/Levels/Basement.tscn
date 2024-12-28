@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://balmmwsvdbio1"]
+[gd_scene load_steps=37 format=3 uid="uid://balmmwsvdbio1"]
 
 [ext_resource type="PackedScene" uid="uid://cn0f3xtrg1v14" path="res://Main/Environment/Basement/Foundation/Basement.glb" id="1_icye2"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/PS1.gdshader" id="1_rqrr6"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dkwfkm25lgn30" path="res://Main/Environment/Basement/Filtration Powder/Filtration powder.glb" id="11_3nv2u"]
 [ext_resource type="PackedScene" uid="uid://b5vkpgu2ms5f" path="res://Main/Environment/Basement/Fish Tank/Fish tank.glb" id="12_uys7b"]
 [ext_resource type="PackedScene" uid="uid://nd6anjjb0s48" path="res://Main/Environment/Basement/Shelf/Shelf.glb" id="13_umtjr"]
+[ext_resource type="PackedScene" uid="uid://5amuh7d42e5s" path="res://Main/Environment/Basement/Mixing Table/MixingTable.tscn" id="14_3o0s4"]
 [ext_resource type="PackedScene" uid="uid://dkbhc3s114m0c" path="res://Main/Environment/Basement/shelf 2/shelf 2.glb" id="14_c0f5u"]
 [ext_resource type="PackedScene" uid="uid://c5kloe2h3q0x0" path="res://Main/Environment/Basement/Table/Table.glb" id="15_ovv2y"]
 [ext_resource type="PackedScene" uid="uid://jqsak7r4w8yl" path="res://Main/Environment/Basement/Ladder/Ladder.glb" id="16_xia6l"]
@@ -21,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dpp0tjv3wkwfk" path="res://Scenes/Prefabs/Player/pickupable.tscn" id="20_wssct"]
 [ext_resource type="PackedScene" uid="uid://0gw3ruis3a4x" path="res://Main/Environment/Basement/shelf 2/shelf_2.tscn" id="22_ws0fc"]
 [ext_resource type="PackedScene" uid="uid://b7q8bp3xj1tnt" path="res://Main/Environment/Basement/Mutator machine v2/mutator machine.tscn" id="24_m2avm"]
+[ext_resource type="PackedScene" uid="uid://buogooonvn1r4" path="res://Main/Environment/Basement/Coke_can/coke_can.tscn" id="24_tvqj4"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/CRT.gdshader" id="25_o6q63"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xsjmc"]
@@ -158,13 +160,17 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.10288, 0, -9.66267)
 transform = Transform3D(0.609811, 0.0294205, -0.792169, -0.0174497, 1.20176, 0.0174524, 0.792355, 0.00382333, 0.610052, -5.99315, 0, -5.28957)
 
 [node name="Crate 2" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.0527, -9.08904, 50.7685)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4964, -9.08904, 46.635)
+mass = 0.21
 
 [node name="Crate 2" parent="Crate 2" instance=ExtResource("10_r6vd8")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Crate 2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00115967, 0.54458, 0)
 shape = SubResource("BoxShape3D_f6pfe")
+
+[node name="MixingTable" parent="Crate 2" instance=ExtResource("14_3o0s4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.329117, 1.10535, 0)
 
 [node name="Filtration powder" parent="." instance=ExtResource("11_3nv2u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.7056, -9.17644, 52.4876)
@@ -300,3 +306,6 @@ transform = Transform3D(-0.999528, 0, -0.0307303, 0, 1, 0, 0.0307303, 0, -0.9995
 pixel_size = 0.003
 text = "Speed
 "
+
+[node name="CokeCan" parent="." instance=ExtResource("24_tvqj4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.6817, -8.00924, 48.5379)

@@ -1,0 +1,161 @@
+[gd_scene load_steps=18 format=3 uid="uid://5amuh7d42e5s"]
+
+[ext_resource type="Script" path="res://Main/Environment/Basement/Mixing Table/VialStand.gd" id="1_sq0ns"]
+[ext_resource type="Script" path="res://Main/Environment/Basement/Mixing Table/IngredientSlot.gd" id="2_28ltj"]
+[ext_resource type="Script" path="res://Main/Environment/Basement/Mixing Table/Button.gd" id="3_javkh"]
+[ext_resource type="AudioStream" uid="uid://dj3gx67ef2qhf" path="res://Assets/Audio/button_press.wav" id="4_8kkva"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_at43m"]
+albedo_color = Color(0.439049, 0.439049, 0.439049, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hj6i1"]
+material = SubResource("StandardMaterial3D_at43m")
+size = Vector2(1.5, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gsdpl"]
+size = Vector3(0.102615, 0.0708008, 0.105713)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jj7g2"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wf2ts"]
+material = SubResource("StandardMaterial3D_jj7g2")
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4nj70"]
+albedo_color = Color(0.0901961, 0.984314, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pwmhd"]
+material = SubResource("StandardMaterial3D_4nj70")
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7olbf"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_w8i3l"]
+material = SubResource("StandardMaterial3D_7olbf")
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.05
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_802mb"]
+height = 0.05
+radius = 0.05
+
+[sub_resource type="Animation" id="Animation_vi0qe"]
+resource_name = "Button_press"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button/MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 0.258816, 1),
+"update": 0,
+"values": [Vector3(0.850912, 0.00621197, 0), Vector3(0.851, -0.005, 0), Vector3(0.850912, 0.00621197, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button/Clicker:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_toeqo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button/MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.850912, 0.00621197, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button/Clicker:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v1txs"]
+_data = {
+"Button_press": SubResource("Animation_vi0qe"),
+"RESET": SubResource("Animation_toeqo")
+}
+
+[node name="MixingTable" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.188514, 0, 0)
+mesh = SubResource("PlaneMesh_hj6i1")
+
+[node name="VialStand" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.101486)
+script = ExtResource("1_sq0ns")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VialStand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.741297, 0.0202637, 0.677682)
+shape = SubResource("BoxShape3D_gsdpl")
+
+[node name="Dropoff" type="Marker3D" parent="VialStand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.753046, 0.178696, 0.661908)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VialStand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.741376, 0, 0.676422)
+mesh = SubResource("BoxMesh_wf2ts")
+skeleton = NodePath("../..")
+
+[node name="IngredientSlot" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0717971)
+script = ExtResource("2_28ltj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IngredientSlot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.741297, 0.0202637, -0.724328)
+shape = SubResource("BoxShape3D_gsdpl")
+
+[node name="Dropoff" type="Marker3D" parent="IngredientSlot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.753046, 0.10188, -0.740102)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="IngredientSlot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.741376, 0, -0.725588)
+mesh = SubResource("BoxMesh_pwmhd")
+skeleton = NodePath("../..")
+
+[node name="Button" type="StaticBody3D" parent="."]
+script = ExtResource("3_javkh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Button"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.850912, 0.00621197, 0)
+mesh = SubResource("CylinderMesh_w8i3l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Button"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85275, 0.00673914, 0)
+shape = SubResource("CylinderShape3D_802mb")
+
+[node name="Clicker" type="AudioStreamPlayer3D" parent="Button"]
+stream = ExtResource("4_8kkva")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_v1txs")
+}

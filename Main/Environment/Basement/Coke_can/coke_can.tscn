@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://buogooonvn1r4"]
+
+[ext_resource type="Script" path="res://Main/Environment/Basement/Coke_can/coke_can.gd" id="1_3llsq"]
+[ext_resource type="PackedScene" uid="uid://dpp0tjv3wkwfk" path="res://Scenes/Prefabs/Player/pickupable.tscn" id="1_5jqjl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nu4l1"]
+albedo_color = Color(0.625575, 1.43189e-06, 5.77569e-07, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fyjp6"]
+material = SubResource("StandardMaterial3D_nu4l1")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.4
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_p6euw"]
+height = 0.14
+radius = 0.045
+
+[node name="CokeCan" type="RigidBody3D"]
+script = ExtResource("1_3llsq")
+
+[node name="Pickupable" parent="." instance=ExtResource("1_5jqjl")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.40125, 0, 0, 0, 0.344318, 0, 0, 0, 0.423317, 0, 0, 0)
+mesh = SubResource("CylinderMesh_fyjp6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000124585, 0)
+shape = SubResource("CylinderShape3D_p6euw")
