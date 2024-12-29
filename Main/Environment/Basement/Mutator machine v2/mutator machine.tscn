@@ -612,7 +612,7 @@ size = Vector3(0.359619, 1.61389, 2.00977)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5eiku"]
 resource_local_to_scene = true
-size = Vector3(1.59363, 0.857422, 1.60986)
+size = Vector3(1.59363, 0.865723, 1.60986)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m5r7l"]
 resource_local_to_scene = true
@@ -1146,7 +1146,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03382, 0.814808, 0.0256222
 shape = SubResource("BoxShape3D_tkdmk")
 
 [node name="CollisionMidBack" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.255819, 0.431963, -0.171143)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.255819, 0.436113, -0.171143)
 shape = SubResource("BoxShape3D_5eiku")
 
 [node name="CollisionMidFront" type="CollisionShape3D" parent="."]

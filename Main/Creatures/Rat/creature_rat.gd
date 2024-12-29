@@ -2,6 +2,7 @@ extends Node3D
 class_name Rat
 # Initializing creature traits
 func _ready():
+	animation_randomizer()
 	var traits = $Creature_traits
 	print('Creature created: ', name)
 	traits.set_type('rat') # Must initialize the type for any BASIC creature
@@ -21,4 +22,16 @@ func _ready():
 		var mutation_picked = possible_mutations.pick_random()
 		print(mutation_picked)
 	#'''
+	
+
+
+func animation_randomizer():
+	var AP = $AnimationPlayer
+	AP.play("breathing_idle")
+	AP.set_speed_scale(randf_range(.9,1))
+	AP.seek(randf_range(0,3))
+	
+	var chance = randf_range(0,1)
+	if roundf(chance):
+		$AnimationPlayer.play("breathing2_idle")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://balmmwsvdbio1"]
+[gd_scene load_steps=38 format=3 uid="uid://balmmwsvdbio1"]
 
 [ext_resource type="PackedScene" uid="uid://cn0f3xtrg1v14" path="res://Main/Environment/Basement/Foundation/Basement.glb" id="1_icye2"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/PS1.gdshader" id="1_rqrr6"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://c5kloe2h3q0x0" path="res://Main/Environment/Basement/Table/Table.glb" id="15_ovv2y"]
 [ext_resource type="PackedScene" uid="uid://jqsak7r4w8yl" path="res://Main/Environment/Basement/Ladder/Ladder.glb" id="16_xia6l"]
 [ext_resource type="PackedScene" uid="uid://dv8n8d4jw2s0" path="res://Main/Creatures/Rat/rat.tscn" id="20_1a4xg"]
+[ext_resource type="PackedScene" uid="uid://cumrddyyn8cy6" path="res://Main/Creatures/Rat_aggressive/creature_rat_aggressive.tscn" id="20_mrxcy"]
 [ext_resource type="PackedScene" uid="uid://b0emm82pisgsc" path="res://Main/Environment/Basement/Vial/vial.tscn" id="20_rexn4"]
 [ext_resource type="PackedScene" uid="uid://dpp0tjv3wkwfk" path="res://Scenes/Prefabs/Player/pickupable.tscn" id="20_wssct"]
 [ext_resource type="PackedScene" uid="uid://0gw3ruis3a4x" path="res://Main/Environment/Basement/shelf 2/shelf_2.tscn" id="22_ws0fc"]
@@ -257,10 +258,19 @@ traits = {
 }
 
 [node name="Rat" parent="." instance=ExtResource("20_1a4xg")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -43.2936, -7.4396, 50.7301)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -43.5772, -7.4396, 50.7301)
+
+[node name="Rat2" parent="." instance=ExtResource("20_1a4xg")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -41.1372, -7.4396, 51.6278)
+
+[node name="Rat3" parent="." instance=ExtResource("20_1a4xg")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -41.8182, -7.4396, 50.7301)
+
+[node name="agressive rat" parent="." instance=ExtResource("20_mrxcy")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -42.8389, -7.26797, 50.7301)
 
 [node name="mutator machine" parent="." instance=ExtResource("24_m2avm")]
-transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -42.9038, -9.17207, 51.686)
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, -42.8553, -9.25561, 51.6761)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
