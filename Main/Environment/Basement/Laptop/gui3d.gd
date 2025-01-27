@@ -32,6 +32,9 @@ func _unhandled_input(event):
 	
 	
 func handle_mouse(event): 
+	# Fixes weird mouse offset
+	var crutch = Vector2(-43, 0)
+	
 	mesh_size = display.mesh.size
 	if event is InputEventMouseButton or event is InputEventScreenTouch:
 		mouse_held = event.pressed
@@ -55,12 +58,12 @@ func handle_mouse(event):
 	#convert to 0 to 1
 	mouse_pos2D.x = mouse_pos2D.x / mesh_size.x
 	mouse_pos2D.y = mouse_pos2D.y / mesh_size.y
-	#convert to viewport range 0 to veiwport size
+	#convert to viewport range 0 to viewport size
 	mouse_pos2D.x = mouse_pos2D.x * viewport.size.x
 	mouse_pos2D.y = mouse_pos2D.y * viewport.size.y
 	
-	event.position = mouse_pos2D
-	event.global_position = mouse_pos2D
+	event.position = mouse_pos2D + crutch
+	event.global_position = mouse_pos2D + crutch
 	
 	if event is InputEventMouseMotion:
 		if last_mouse_pos_2D == null:
@@ -69,6 +72,7 @@ func handle_mouse(event):
 			event.relative = mouse_pos2D - last_mouse_pos_2D
 		
 	last_mouse_pos_2D = mouse_pos2D
+	
 	
 	viewport.push_input(event)
 	mouse_held = false

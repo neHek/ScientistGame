@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://cehcphcyuw608"]
 
-[ext_resource type="Script" path="res://Scenes/UI/base_request.gd" id="1_83g4n"]
-[ext_resource type="Texture2D" uid="uid://b3vu6yb8n3jaw" path="res://Assets/UI Textures/temp requst state.png" id="1_ser78"]
-[ext_resource type="Texture2D" uid="uid://bu18ojsgkdq4" path="res://Assets/UI Textures/temp Check Mark.png" id="2_c1sjj"]
-[ext_resource type="Texture2D" uid="uid://bav4wlrx4iwlg" path="res://Assets/UI Textures/temp X mark.png" id="3_katqw"]
+[ext_resource type="Script" path="res://Main/Environment/Basement/Laptop/base_request.gd" id="1_pgfda"]
+[ext_resource type="Texture2D" uid="uid://b3vu6yb8n3jaw" path="res://Assets/UI Textures/temp requst state.png" id="2_8of0g"]
+[ext_resource type="Texture2D" uid="uid://bu18ojsgkdq4" path="res://Assets/UI Textures/temp Check Mark.png" id="3_3usvt"]
+[ext_resource type="Texture2D" uid="uid://bav4wlrx4iwlg" path="res://Assets/UI Textures/temp X mark.png" id="4_dbps2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sv34"]
 border_width_left = 10
@@ -55,7 +55,7 @@ PanelContainer/styles/panel = SubResource("StyleBoxFlat_1uvbb")
 [node name="base request" type="VBoxContainer"]
 size_flags_vertical = 3
 theme_override_constants/separation = -1
-script = ExtResource("1_83g4n")
+script = ExtResource("1_pgfda")
 
 [node name="request head" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(1000, 75)
@@ -67,7 +67,7 @@ theme = SubResource("Theme_0snwo")
 z_index = 1
 layout_mode = 2
 
-[node name="Resquest name" type="Label" parent="request head/HBoxContainer"]
+[node name="Request name" type="Label" parent="request head/HBoxContainer"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -82,7 +82,7 @@ custom_minimum_size = Vector2(200, 60)
 layout_mode = 2
 size_flags_vertical = 0
 mouse_default_cursor_shape = 2
-texture = ExtResource("1_ser78")
+texture = ExtResource("2_8of0g")
 expand_mode = 1
 stretch_mode = 5
 
@@ -90,7 +90,7 @@ stretch_mode = 5
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 mouse_filter = 1
-texture_normal = ExtResource("2_c1sjj")
+texture_normal = ExtResource("3_3usvt")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -98,7 +98,7 @@ stretch_mode = 4
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 mouse_filter = 1
-texture_normal = ExtResource("3_katqw")
+texture_normal = ExtResource("4_dbps2")
 ignore_texture_size = true
 stretch_mode = 4
 

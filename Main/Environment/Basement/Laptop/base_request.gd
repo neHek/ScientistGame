@@ -1,11 +1,11 @@
 extends VBoxContainer
 
-@onready var request_name = $"request head/HBoxContainer/Resquest name"
+@onready var request_name = $"request head/HBoxContainer/Request name"
 @onready var customer_name = $"request body/VBoxContainer/Customer name"
 @onready var reward_text = $"request body/VBoxContainer/Reward"
 @onready var description_text = $"request body/VBoxContainer/Description"
 @onready var request_body = $"request body"
-var resquestData
+var requestData
 var is_request_open = false
 
 # Called when the node enters the scene tree for the first time.
@@ -37,5 +37,4 @@ func _on_reject_btn_button_up():
 
 func _on_request_window_btn_button_up():
 	toggle_request_window()
-	print("AAAAAAAAAAAAAAHHHHHHHHH")
 	pass # Replace with function body.

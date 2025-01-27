@@ -1,13 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://b2866ubj0npqf"]
+[gd_scene load_steps=13 format=3 uid="uid://b2866ubj0npqf"]
 
-[ext_resource type="Script" path="res://Scenes/UI/LaptopBody.gd" id="1_je0x8"]
-[ext_resource type="Script" path="res://Scenes/UI/gui3d.gd" id="2_genas"]
-[ext_resource type="PackedScene" uid="uid://cg2ru71agh8t3" path="res://Scenes/UI/laptop screen UI.tscn" id="2_hv74x"]
+[ext_resource type="Script" path="res://Main/Environment/Basement/Laptop/LaptopBody.gd" id="1_je0x8"]
+[ext_resource type="Script" path="res://Main/Environment/Basement/Laptop/gui3d.gd" id="2_genas"]
+[ext_resource type="PackedScene" uid="uid://cg2ru71agh8t3" path="res://Main/Environment/Basement/Laptop/laptop screen UI.tscn" id="2_hv74x"]
 [ext_resource type="PackedScene" uid="uid://brbobi6rj7efx" path="res://Main/Environment/Basement/Laptop.glb" id="2_i6k3b"]
 [ext_resource type="AudioStream" uid="uid://bjgb6rg8dv5vv" path="res://Assets/Audio/PCstartup.mp3" id="5_osfrq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mfmrt"]
 size = Vector3(1, 0.8, 0.001)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s0i87"]
+size = Vector3(1.12134, 0.071228, 0.779358)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_e5yjr"]
 viewport_path = NodePath("gui3d/SubViewport")
@@ -31,17 +34,19 @@ size = Vector3(1, 0.8, 0.15)
 script = ExtResource("1_je0x8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LaptopBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0343785, 0.450575, -0.493253)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0027245, 0.450575, -0.493253)
 shape = SubResource("BoxShape3D_mfmrt")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="LaptopBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000610352, -0.00347695, -0.016699)
+shape = SubResource("BoxShape3D_s0i87")
 
 [node name="Laptop" parent="." instance=ExtResource("2_i6k3b")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233292, 0.584768, 1.31738)
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.497063, 0.488151)
+projection = 1
 
 [node name="gui3d" type="Node3D" parent="."]
 script = ExtResource("2_genas")
@@ -70,3 +75,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.393996)
 stream = ExtResource("5_osfrq")
 volume_db = -21.333
 unit_size = 1.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57043, -0.345323)
+omni_range = 1.0
+omni_attenuation = -0.5

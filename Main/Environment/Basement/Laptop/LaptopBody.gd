@@ -16,7 +16,7 @@ func interact():
 
 
 func handle_input():
-	if Input.is_action_just_pressed("ui_cancel") or Input.is_action_just_pressed("RMB"):
+	if Input.is_action_just_pressed("ui_cancel"):
 		player_cam.current = true
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		$"../gui3d".mouse_entered = false

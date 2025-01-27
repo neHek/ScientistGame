@@ -37,8 +37,10 @@ script = ExtResource("2_c8atv")
 default_inventory_logo = ExtResource("3_isve4")
 
 [node name="DebugLabel" type="Label" parent="InventoryNode"]
-offset_right = 402.0
-offset_bottom = 59.0
+offset_left = 972.0
+offset_top = 521.0
+offset_right = 1374.0
+offset_bottom = 580.0
 
 [node name="DebugLabel2" type="Label" parent="InventoryNode"]
 offset_top = 71.0
