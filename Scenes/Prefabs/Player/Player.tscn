@@ -29,7 +29,7 @@
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_eqof7"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_76kdn")
 
 [node name="InventoryNode" type="Node" parent="." groups=["InventoryNode"]]
@@ -48,12 +48,12 @@ offset_right = 402.0
 offset_bottom = 130.0
 
 [node name="ActiveSlot" type="Label" parent="InventoryNode"]
-offset_left = 724.0
+offset_left = 736.0
 offset_top = 1049.0
-offset_right = 824.0
+offset_right = 836.0
 offset_bottom = 1072.0
 
-[node name="InventoryUI" type="GridContainer" parent="InventoryNode"]
+[node name="InventoryUI" type="GridContainer" parent="InventoryNode" groups=["inventory_ui"]]
 custom_minimum_size = Vector2(50, 50)
 offset_left = 723.0
 offset_top = 936.0

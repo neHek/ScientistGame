@@ -1,11 +1,12 @@
 extends Node
-var discovered_types = []
+var discovered_types = ['aggressive_rat', 'buff_rat', 'splinter']
 # All possible mutations are stored here sorted by base creature type. 
 # When a creature is modified we check if it's new traits match any of the mutations.
 # If they do - we pick a random matching mutation, despawn old creature, spawn a new mutant with inherited traits
 
 var buff_rat = {  
 	"name": 'creature_rat_buff',
+	"name_readable": 'Buff rat',
 	"base_creature": 'rat',
 	"req": {
 		'size':         range(0, 101), 
@@ -19,6 +20,7 @@ var buff_rat = {
 
 var splinter = {  
 	"name": 'creature_rat_splinter',
+	"name_readable": 'Ninja rat',
 	"base_creature": 'rat',
 	"req": {
 		'size':         range(0, 101), 
@@ -32,6 +34,7 @@ var splinter = {
 
 var aggressive_rat = {  
 	"name": 'creature_rat_aggressive',
+	"name_readable": 'Aggressive rat',
 	"base_creature": 'rat',
 	"req": {
 		'size':         range(0, 101), 

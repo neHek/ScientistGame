@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 Enums="*res://Scripts/Utils/Enums.gd"
 CreatureTypes="*res://Main/Creatures/creature_types.gd"
+ContractManager="*res://Scripts/contract_manager.gd"
 
 [display]
 

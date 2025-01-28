@@ -9,9 +9,6 @@ var current_page = null
 func _ready():
 	switch_page(orders_page)
 
-func _process(delta):
-	pass
-
 func switch_page(page):
 	for element in all_pages:
 		element.visible = false
