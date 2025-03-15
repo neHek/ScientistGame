@@ -26,4 +26,3 @@ func handle_input():
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		$"../gui3d".mouse_entered = false
 		inventory_ui.visible = true
-

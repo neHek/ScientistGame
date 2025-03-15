@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://cg2ru71agh8t3"]
 
-[ext_resource type="Script" path="res://Main/Environment/Basement/Laptop/laptop screen UI.gd" id="1_xkjs5"]
+[ext_resource type="Script" uid="uid://crjf8he75s5n1" path="res://Main/Environment/Basement/Laptop/laptop screen UI.gd" id="1_xkjs5"]
 [ext_resource type="PackedScene" uid="uid://cehcphcyuw608" path="res://Main/Environment/Basement/Laptop/base_request.tscn" id="2_yscmr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_51573"]

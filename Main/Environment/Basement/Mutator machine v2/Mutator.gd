@@ -139,5 +139,3 @@ func interact():
 	state_update()
 	if creature and vial:
 		mutate()
-
-

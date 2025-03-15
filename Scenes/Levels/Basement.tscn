@@ -1,7 +1,7 @@
-[gd_scene load_steps=42 format=3 uid="uid://balmmwsvdbio1"]
+[gd_scene load_steps=43 format=3 uid="uid://balmmwsvdbio1"]
 
 [ext_resource type="PackedScene" uid="uid://cn0f3xtrg1v14" path="res://Main/Environment/Basement/Foundation/Basement.glb" id="1_icye2"]
-[ext_resource type="Shader" path="res://Scripts/Shaders/PS1.gdshader" id="1_rqrr6"]
+[ext_resource type="Shader" uid="uid://t4bu2gtjqbhw" path="res://Scripts/Shaders/PS1.gdshader" id="1_rqrr6"]
 [ext_resource type="PackedScene" uid="uid://bdul7cabxrk6b" path="res://Main/Environment/Basement/DoorNStairs/DoorNStairs.glb" id="2_caer8"]
 [ext_resource type="PackedScene" uid="uid://cmn8cv4xlsjwe" path="res://Scenes/Prefabs/Player/Player.tscn" id="3_q4ay8"]
 [ext_resource type="PackedScene" uid="uid://dlb0phh8up51l" path="res://Main/Environment/Basement/Axe/Axe.glb" id="4_l2pp0"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c1o84hobe0wea" path="res://Assets/UI Textures/axe.png" id="6_2vn13"]
 [ext_resource type="PackedScene" uid="uid://datlrxykmcoc4" path="res://Main/Environment/Basement/cabinet/cabinet.glb" id="6_mp3ln"]
 [ext_resource type="PackedScene" uid="uid://pkw4iol2lbj4" path="res://Main/Environment/Basement/Cage 1/Cage 1.glb" id="7_ets3w"]
+[ext_resource type="PackedScene" uid="uid://lheefljlmo4e" path="res://Scenes/Prefabs/Player/conversation_node.tscn" id="7_tba5p"]
 [ext_resource type="PackedScene" uid="uid://48fsug3ectrp" path="res://Main/Environment/Basement/Crate 2/Crate 2.glb" id="10_r6vd8"]
 [ext_resource type="PackedScene" uid="uid://dkwfkm25lgn30" path="res://Main/Environment/Basement/Filtration Powder/Filtration powder.glb" id="11_3nv2u"]
 [ext_resource type="PackedScene" uid="uid://b5vkpgu2ms5f" path="res://Main/Environment/Basement/Fish Tank/Fish tank.glb" id="12_uys7b"]
@@ -25,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://0gw3ruis3a4x" path="res://Main/Environment/Basement/shelf 2/shelf_2.tscn" id="22_ws0fc"]
 [ext_resource type="PackedScene" uid="uid://b7q8bp3xj1tnt" path="res://Main/Environment/Basement/Mutator machine v2/mutator machine.tscn" id="24_m2avm"]
 [ext_resource type="PackedScene" uid="uid://buogooonvn1r4" path="res://Main/Environment/Basement/Coke_can/coke_can.tscn" id="24_tvqj4"]
-[ext_resource type="Shader" path="res://Scripts/Shaders/CRT.gdshader" id="25_o6q63"]
+[ext_resource type="Shader" uid="uid://dq3i2koh8rcoa" path="res://Scripts/Shaders/CRT.gdshader" id="25_o6q63"]
 
 [sub_resource type="Environment" id="Environment_5ausa"]
 ambient_light_source = 3
@@ -122,7 +123,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3239, -9.75613, -74.8006)
 transform = Transform3D(0.0373415, 0, -0.999303, 0, 1, 0, 0.999303, 0, 0.0373415, -42.9038, -8.93757, 44.493)
 
 [node name="Axe" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.940151, -0.340757, 0, 0.340757, 0.940151, -76.6874, -9.11139, 52.8367)
+transform = Transform3D(1, 0, 0, 0, 0.940151, -0.340757, 0, 0.340757, 0.940151, -46.9136, -9.11139, 48.4609)
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_80j0i")
 can_sleep = false
@@ -138,15 +139,16 @@ shape = SubResource("CapsuleShape3D_hpb40")
 Ui_texture = ExtResource("6_2vn13")
 
 [node name="Beaker" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.1615, -7.88078, 50.663)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.2218, -7.88078, 44.4711)
 mass = 0.3
+metadata/_edit_group_ = true
+
+[node name="ConversationNode" parent="Beaker" instance=ExtResource("7_tba5p")]
 
 [node name="Beaker container" parent="Beaker" instance=ExtResource("5_aj2hr")]
 
-[node name="Pickupable" parent="Beaker" instance=ExtResource("20_wssct")]
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Beaker"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.239303, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.234305, 0)
 shape = SubResource("CylinderShape3D_lfcfx")
 
 [node name="cabinet" parent="." instance=ExtResource("6_mp3ln")]

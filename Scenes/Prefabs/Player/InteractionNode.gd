@@ -19,10 +19,13 @@ func handle_interactions():
 	# Picking up
 	if Input.is_action_just_pressed("interact") and collider:
 		var pickupable = collider.find_child('Pickupable')
+		var talkable = collider.find_child('ConversationNode')
 		if pickupable:
 			pickupable.interact()
 			return
-	
+		if talkable:
+			talkable.start_conversation()
+			return
 	# Interacting and pushing
 		if collider.has_method('interact'):
 			$"../InventoryNode/DebugLabel2".text = 'Interacted with ' + collider.name

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://buogooonvn1r4"]
 
-[ext_resource type="Script" path="res://Main/Environment/Basement/Coke_can/coke_can.gd" id="1_3llsq"]
+[ext_resource type="Script" uid="uid://4p6dng5c6f20" path="res://Main/Environment/Basement/Coke_can/coke_can.gd" id="1_3llsq"]
 [ext_resource type="PackedScene" uid="uid://dpp0tjv3wkwfk" path="res://Scenes/Prefabs/Player/pickupable.tscn" id="1_5jqjl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nu4l1"]

@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://lheefljlmo4e"]
+
+[ext_resource type="Script" uid="uid://wfqwxwlwij6s" path="res://Scenes/Prefabs/Player/conversation_node.gd" id="2_4lhjt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i3ijm"]
+font_size = 30
+
+[node name="ConversationNode" type="Node"]
+script = ExtResource("2_4lhjt")
+
+[node name="Interface" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Interface"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Interface/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Interface/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+alignment = 2
+
+[node name="GridContainer" type="GridContainer" parent="Interface/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 3
+
+[node name="ConversationLine" type="Label" parent="Interface/MarginContainer/HBoxContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Conversation Line"
+label_settings = SubResource("LabelSettings_i3ijm")
+
+[node name="Response1" type="Button" parent="Interface/MarginContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Option"
+alignment = 0
+icon_alignment = 1
+
+[node name="Response2" type="Button" parent="Interface/MarginContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Option2"
+alignment = 0
+icon_alignment = 1
+
+[node name="Response3" type="Button" parent="Interface/MarginContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Option3"
+alignment = 0
+icon_alignment = 1
+
+[connection signal="pressed" from="Interface/MarginContainer/HBoxContainer/VBoxContainer/GridContainer/Response1" to="." method="make_choice" binds= [0]]
+[connection signal="pressed" from="Interface/MarginContainer/HBoxContainer/VBoxContainer/GridContainer/Response2" to="." method="make_choice" binds= [1]]
+[connection signal="pressed" from="Interface/MarginContainer/HBoxContainer/VBoxContainer/GridContainer/Response3" to="." method="make_choice" binds= [2]]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://cehcphcyuw608"]
 
-[ext_resource type="Script" path="res://Main/Environment/Basement/Laptop/base_request.gd" id="1_pgfda"]
+[ext_resource type="Script" uid="uid://dwavgts14t1sn" path="res://Main/Environment/Basement/Laptop/base_request.gd" id="1_pgfda"]
 [ext_resource type="Texture2D" uid="uid://b3vu6yb8n3jaw" path="res://Assets/UI Textures/temp requst state.png" id="2_8of0g"]
 [ext_resource type="Texture2D" uid="uid://bu18ojsgkdq4" path="res://Assets/UI Textures/temp Check Mark.png" id="3_3usvt"]
 [ext_resource type="Texture2D" uid="uid://cjk7yeim6ill1" path="res://Assets/UI Textures/temp Check Mark pressed.png" id="4_1ivc8"]

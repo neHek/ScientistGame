@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://b2866ubj0npqf"]
 
-[ext_resource type="Script" path="res://Main/Environment/Basement/Laptop/LaptopBody.gd" id="1_je0x8"]
-[ext_resource type="Script" path="res://Main/Environment/Basement/Laptop/gui3d.gd" id="2_genas"]
+[ext_resource type="Script" uid="uid://circjwy6uy1ku" path="res://Main/Environment/Basement/Laptop/LaptopBody.gd" id="1_je0x8"]
+[ext_resource type="Script" uid="uid://c1vts00wp6p16" path="res://Main/Environment/Basement/Laptop/gui3d.gd" id="2_genas"]
 [ext_resource type="PackedScene" uid="uid://cg2ru71agh8t3" path="res://Main/Environment/Basement/Laptop/laptop screen UI.tscn" id="2_hv74x"]
 [ext_resource type="PackedScene" uid="uid://brbobi6rj7efx" path="res://Main/Environment/Basement/Laptop.glb" id="2_i6k3b"]
 [ext_resource type="AudioStream" uid="uid://bjgb6rg8dv5vv" path="res://Assets/Audio/PCstartup.mp3" id="5_osfrq"]

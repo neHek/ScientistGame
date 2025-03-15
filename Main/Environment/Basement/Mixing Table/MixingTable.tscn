@@ -1,8 +1,8 @@
 [gd_scene load_steps=18 format=3 uid="uid://5amuh7d42e5s"]
 
-[ext_resource type="Script" path="res://Main/Environment/Basement/Mixing Table/VialStand.gd" id="1_sq0ns"]
-[ext_resource type="Script" path="res://Main/Environment/Basement/Mixing Table/IngredientSlot.gd" id="2_28ltj"]
-[ext_resource type="Script" path="res://Main/Environment/Basement/Mixing Table/Button.gd" id="3_javkh"]
+[ext_resource type="Script" uid="uid://d3xr1orl3i135" path="res://Main/Environment/Basement/Mixing Table/VialStand.gd" id="1_sq0ns"]
+[ext_resource type="Script" uid="uid://dqnjabft8sw4c" path="res://Main/Environment/Basement/Mixing Table/IngredientSlot.gd" id="2_28ltj"]
+[ext_resource type="Script" uid="uid://dnf6a5yvfc4j4" path="res://Main/Environment/Basement/Mixing Table/Button.gd" id="3_javkh"]
 [ext_resource type="AudioStream" uid="uid://dj3gx67ef2qhf" path="res://Assets/Audio/button_press.wav" id="4_8kkva"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_at43m"]
@@ -99,8 +99,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v1txs"]
 _data = {
-"Button_press": SubResource("Animation_vi0qe"),
-"RESET": SubResource("Animation_toeqo")
+&"Button_press": SubResource("Animation_vi0qe"),
+&"RESET": SubResource("Animation_toeqo")
 }
 
 [node name="MixingTable" type="Node3D"]
